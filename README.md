@@ -10,7 +10,7 @@ User story - everyone likes food, but not everyone likes to cook; As a human, I 
 
 Wireframe ideas / sketch of the design (at least have an idea how how you -would like it laid out) - 
 
-APIs to be used: Recipe - Food - Nutrition, Cocktail DB, Weather API
+APIs to be used: Recipe - Food - Nutrition (https://spoonacular.com/food-api), Cocktail DB (https://www.thecocktaildb.com/api.php), Weather API
 
 Rough break down of tasks: 
 
