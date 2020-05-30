@@ -1,24 +1,29 @@
+// //stores previous recipes in local storage
+// var recipeArray = JSON.parse(localStorage.getItem("recipes")) || [];
 
+// on click event to initiate food recipe search once ingredients are entered
+$("#foodSearch").on("click", function(event) {
 
-var APIKey = "37bd8dfef1msh4174c2e8e77b8e9p118f96jsn5ee04ed7a537";
+	// variable to pull ingredients to be used for search
+	var foodIng = $("#foodIng")
+		.val()
+		.trim();
+		
+		console.log(foodIng);
 
-// Here we are building the URL we need to query the database
-var queryURL = "https://api.spoonacular.com/recipes/search";
-
-// array to add cities to, to be grabbed from after search
-var recipeArray = JSON.parse(localStorage.getItem("recipes")) || [];
-
-var settings = {
-	"async": true,
-	"crossDomain": true,
-	"url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/quickAnswer?q=How%20much%20vitamin%20c%20is%20in%202%20apples%253F",
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-		"x-rapidapi-key": "37bd8dfef1msh4174c2e8e77b8e9p118f96jsn5ee04ed7a537"
+	// API call to search for recipes based on ingredient
+	var settings = {
+		"async": true,
+		"crossDomain": true,
+		"url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=5&ranking=1&ignorePantry=false&ingredients=" + foodIng,
+		"method": "GET",
+		"headers": {
+			"x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+			"x-rapidapi-key": "380aee2f63msh502b64f71be7614p164be7jsn561a2dd539f1"
+		}
 	}
-}
 
-$.ajax(settings).done(function (response) {
-	console.log(response);
+	$.ajax(settings).done(function (response) {
+		console.log(response);
+	});
 });
