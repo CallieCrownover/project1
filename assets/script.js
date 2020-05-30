@@ -1,33 +1,29 @@
-
-
-var APIKeyFood = "37bd8dfef1msh4174c2e8e77b8e9p118f96jsn5ee04ed7a537";
-
-// Here we are building the URL we need to query the database
-var queryURL = "https://api.spoonacular.com/recipes/findByIngredients?";
-
 // //stores previous recipes in local storage
 // var recipeArray = JSON.parse(localStorage.getItem("recipes")) || [];
 
+// on click event to initiate food recipe search once ingredients are entered
 $("#foodSearch").on("click", function(event) {
 
-var foodIng = $("#foodIng")
-	.val()
-	.trim();
+	// variable to pull ingredients to be used for search
+	var foodIng = $("#foodIng")
+		.val()
+		.trim();
+		
+		console.log(foodIng);
 
-var settings = {
-	"async": true,
-	"crossDomain": true,
-	"url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=10&ranking=1&ignorePantry=true&ingredients=" + foodIng,
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-		"x-rapidapi-key": "380aee2f63msh502b64f71be7614p164be7jsn561a2dd539f1"
+	// API call to search for recipes based on ingredient
+	var settings = {
+		"async": true,
+		"crossDomain": true,
+		"url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=5&ranking=1&ignorePantry=false&ingredients=" + foodIng,
+		"method": "GET",
+		"headers": {
+			"x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+			"x-rapidapi-key": "380aee2f63msh502b64f71be7614p164be7jsn561a2dd539f1"
+		}
 	}
-}
 
-$.ajax(settings).done(function (response) {
-	console.log(response);
-
-
-});
+	$.ajax(settings).done(function (response) {
+		console.log(response);
+	});
 });
