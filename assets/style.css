@@ -1,0 +1,49 @@
+* {
+    font-family: 'Raleway', sans-serif;
+}
+
+
+.nav-wrapper {
+    background: rgb(253,187,45);
+    background: radial-gradient(circle, rgba(253,187,45,1) 17%, rgba(242,205,15,1) 66%);
+}
+
+
+#index-banner {
+    background-image: url('../images/food\ header\ 1.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+h1 {
+    color: orange;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+
+.box {
+    align-self: center;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+
+
+
+
+
+.wrapper {
+    align-content: center;
+}
+
+
+
+
+  .trial {
+    background-color: lightseagreen;
+   
+  }
+
+
