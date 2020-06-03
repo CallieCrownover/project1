@@ -27,3 +27,27 @@ $("#foodSearch").on("click", function(event) {
 		console.log(response);
 	});
 });
+// on click event to initiate cocktail search once ingredients are entered
+$("#cocktailIng").on("click", function(event){ 
+
+	var cocktailIng= $("#cocktailIng")
+		.val()
+		.trim();
+	
+		console.log("#cocktailIng")
+	
+	var cocktail = {
+		"async": true,
+		"crossDomain": true,
+		"url": "https://the-cocktail-db.p.rapidapi.com/search.php?i=" + cocktailIng,
+		"method": "GET",
+		"headers": {
+			"x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",
+			"x-rapidapi-key": "05b725c27amsh218a9c552817d66p1c19b1jsnd9b6fdf58751"
+		}
+	}
+	
+	$.ajax(cocktail).done(function (response) {
+		console.log(response);
+	});
+	});
