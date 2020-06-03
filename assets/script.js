@@ -35,7 +35,7 @@ $("#cocktailIng").on("click", function(event){
 		.trim();
 	
 		console.log("#cocktailIng")
-	
+	//API call for cocktail search
 	var cocktail = {
 		"async": true,
 		"crossDomain": true,
