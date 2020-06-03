@@ -25,21 +25,32 @@ $("#foodSearch").on("click", function(event) {
 
 	$.ajax(settings).done(function (response) {
 		console.log(response);
+
+		//will need to display of results to card, need to pull the image from the response, dynamically create element for image, set attribute and place the image to HTML
+		var dishImg = response.[i].image
+
+		//this API only provides dish name and ingredients necessary to make the dish, but no step by step instruction, creating a variable to store the dish name to call another API to pull the recipe and step by step instrcutions
+		var dishName = response.[i].title
+
+		//function for the new API pull, will need to build the new function outside of this current function
+		searchRecipe(dishName);
 	});
+
+
 });
 // on click event to initiate cocktail search once ingredients are entered
-$("#cocktailIng").on("click", function(event){ 
+$("#drinkSearch").on("click", function(event){ 
 
-	var cocktailIng= $("#cocktailIng")
+	var drinkIng= $("#drinkIng")
 		.val()
 		.trim();
 	
-		console.log("#cocktailIng")
+		console.log("#drinkIng")
 	//API call for cocktail search
 	var cocktail = {
 		"async": true,
 		"crossDomain": true,
-		"url": "https://the-cocktail-db.p.rapidapi.com/search.php?i=" + cocktailIng,
+		"url": "https://the-cocktail-db.p.rapidapi.com/search.php?i=" + drinkIng,
 		"method": "GET",
 		"headers": {
 			"x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",
@@ -49,5 +60,6 @@ $("#cocktailIng").on("click", function(event){
 	
 	$.ajax(cocktail).done(function (response) {
 		console.log(response);
+		console.log("****")
 	});
 	});
