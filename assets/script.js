@@ -15,12 +15,13 @@ $("#foodSearch").on("click", function(event) {
 	var settings = {
 		"async": true,
 		"crossDomain": true,
-		"url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=5&ranking=1&ignorePantry=false&ingredients=" + foodIng,
-		"method": "GET",
-		"headers": {
-			"x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-			"x-rapidapi-key": "380aee2f63msh502b64f71be7614p164be7jsn561a2dd539f1"
-		}
+		"url": "https://api.spoonacular.com/recipes/762009/information?includeNutrition=false&apiKey=380aee2f63msh502b64f71be7614p164be7jsn561a2dd539f1" ,
+		"method": "GET"
+		// "headers": {
+		// 	"x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+		// 	"Access-Control-Allow-Origin": "*",
+		// 	"x-rapidapi-key": "380aee2f63msh502b64f71be7614p164be7jsn561a2dd539f1"
+		// }
 	}
 
 	$.ajax(settings).done(function (response) {
@@ -63,3 +64,4 @@ $("#drinkSearch").on("click", function(event){
 		console.log("****")
 	});
 	});
+
