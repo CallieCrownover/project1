@@ -2,6 +2,17 @@
     font-family: 'Raleway', sans-serif;
 }
 
+button {
+    background: rgb(253,187,45);
+    background: radial-gradient(circle, rgba(253,187,45,1) 17%, rgba(242,205,15,1) 66%);
+    margin-bottom: 30px;
+}
+body {
+    background-image: url('../images/378.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
 .nav-wrapper {
     background: rgb(253,187,45);
@@ -30,6 +41,26 @@ h1 {
 }
 
 
+.card {
+    width: 100%;
+    align-self: center;
+    justify-self: center;
+    align-content: center;
+    justify-content: center;
+    max-width: 450px;
+    background: #D3CCE3;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #E9E4F0, #D3CCE3);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #E9E4F0, #D3CCE3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
+img {
+    height: 250px;
+    object-fit: cover;
+}
+
+
+
 .title {
     font-size: 20px;
 }
@@ -41,11 +72,53 @@ h1 {
 }
 
 
+/* the tiny white space between the jumbotron and the grid starting */
+.divider {
+    size: 30px;
+}
 
 
-  .trial {
-    background-color: lightseagreen;
+  
+.trial {
+    /* background-color: lightseagreen; */
+    border-radius: 15px;
+    border-color: black;
+
+
    
-  }
+}
 
 
+
+#foodSearch {
+    margin-bottom: 30px;
+}
+
+.page-footer {
+    background: rgb(253,187,45);
+    background: radial-gradient(circle, rgba(253,187,45,1) 17%, rgba(242,205,15,1) 66%);
+}
+
+
+/* @media screen and (max-width: 600px) {
+    .navbar {
+        scale: 20%;
+    }
+
+
+    .text {
+        margin: 30px 30px 30px 30px;
+        font-size: 15px;
+    }
+
+    .box {
+        background: rgba(255, 255, 255, 0.9);
+        height: 100%;
+        margin-top: 0px;
+        margin-left: 15%;
+        margin-right: 15%;
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+
+} */
