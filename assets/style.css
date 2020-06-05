@@ -2,11 +2,14 @@
     font-family: 'Raleway', sans-serif;
 }
 
+
 button {
     background: rgb(253,187,45);
     background: radial-gradient(circle, rgba(253,187,45,1) 17%, rgba(242,205,15,1) 66%);
     margin-bottom: 30px;
 }
+
+
 body {
     background-image: url('../images/378.jpg');
     background-position: center;
@@ -14,10 +17,18 @@ body {
     background-repeat: no-repeat;
 }
 
+.row {
+    margin: 0 50px;
+    vertical-align: center;
+    justify-content: center;
+    align-content: center;
+}
+
 .nav-wrapper {
     background: rgb(253,187,45);
     background: radial-gradient(circle, rgba(253,187,45,1) 17%, rgba(242,205,15,1) 66%);
 }
+
 
 
 #index-banner {
@@ -28,6 +39,7 @@ body {
 }
 
 
+
 h1 {
     color: orange;
     font-weight: bold;
@@ -35,9 +47,10 @@ h1 {
 }
 
 
+
 .box {
     align-self: center;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(0, 0, 0, 0.5);
 }
 
 
@@ -48,9 +61,22 @@ h1 {
     background: linear-gradient(to top, #E9E4F0, #D3CCE3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+
+.header {
+    font-size: 80px;
+}
+
+.light {
+    color: white;
+}
+
+
 .grid-element {
     margin: 5px;
 }
+
+
+
 img {
     height: 250px;
     object-fit: cover;
