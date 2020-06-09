@@ -28,6 +28,22 @@ body {
 }
 
 
+.row {
+    margin: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+
+.text-lighten-2 {
+    font-size: 120px;
+}
+
+
+.light {
+    color: white;
+}
+
 h1 {
     color: orange;
     font-weight: bold;
@@ -36,26 +52,31 @@ h1 {
 
 
 .box {
+    width: 60px;
     align-self: center;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(0, 0, 0, 0.5);
 }
 
 
-.card {
+.card, .recipeCard, .recipeBlurb, .card-content {
     width: 100%;
-    background: #D3CCE3;  /* fallback for old browsers */
+    background: #D3CCE3; 
     background: -webkit-linear-gradient(to top, #E9E4F0, #D3CCE3);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to top, #E9E4F0, #D3CCE3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    object-fit: cover;
+    display: block;
 }
 
 .grid-element {
-    margin: 5px;
-}
-img {
-    height: 250px;
-    object-fit: cover;
+    display: block;
 }
 
+img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
 
 
 .title {
@@ -75,22 +96,15 @@ img {
 }
 
 
-  
-.trial {
-    /* background-color: lightseagreen; */
-    border-radius: 15px;
-    border-color: black;
-}
-
 
 
 #foodSearch {
     margin-bottom: 30px;
 }
 
-.page-footer {
-    background: rgb(253,187,45);
-    background: radial-gradient(circle, rgba(253,187,45,1) 17%, rgba(242,205,15,1) 66%);
+.footer-copyright {
+    max-height: 70px;
+    text-align: center;
 }
 
 
