@@ -2,7 +2,7 @@
 // var recipeArray = JSON.parse(localStorage.getItem("recipes")) || [];
 
 // on click event to initiate food recipe search once ingredients are entered
-$("#foodSearch").on("click", function(event) {
+function recipeHound() {
 
 	// variable to pull ingredients to be used for search
 	var foodIng = $("#foodIng")
@@ -11,11 +11,11 @@ $("#foodSearch").on("click", function(event) {
 		
 		console.log(foodIng);
 
-	// API call to search for recipes based on ingredient
+	// API call to search for recipes based on available ingredients on hand
 	var settings = {
 		"async": true,
 		"crossDomain": true,
-		"url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=5&ranking=1&ignorePantry=false&ingredients=" + foodIng,
+		"url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=8&ranking=1&ignorePantry=false&ingredients=" + foodIng,
 		"method": "GET",
 		"headers": {
 			"x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
@@ -25,6 +25,11 @@ $("#foodSearch").on("click", function(event) {
 
 	$.ajax(settings).done(function (response) {
 		console.log(response);
+
+		// // Below would be what the loop would look like if I wanted to shorten the script. 
+		// for (var i=0;i<4;i++){
+		// 	var img =$("#imge"+i+"")
+		// 	img.attr("src",response[i].image)
 
 		// variable that pulls info from API (image, title, id)
 		var dishOneImg = response[0].image;
@@ -86,32 +91,35 @@ $("#foodSearch").on("click", function(event) {
 
 
 		//placing information to the HTML page
-		$("#cardOne").append(dishImg);
-		$("#titleOne").append(dishOneTitle);
+		$("#foodImg1").append(dishImg);
+		$("#recipeTitle1").append(dishOneTitle);
 
-		// for (var i=0;i<4;i++){
-		// 	var img =$("#imge"+i+"")
-		// 	img.attr("src",response[i].image)
+		$("#foodImg2").append(dishImgTwo);
+		$("#recipeTitle2").append(dishTwoTitle);
 
+		$("#foodImg3").append(dishImgThree);
+		$("#recipeTitle3").append(dishThreeTitle);
 
+		$("#foodImg4").append(dishImgFour);
+		$("#recipeTitle4").append(dishFourTitle);
 
+		$("#foodImg5").append(dishImgFive);
+		$("#recipeTitle5").append(dishFiveTitle);
 
+		$("#foodImg6").append(dishImgSix);
+		$("#recipeTitle6").append(dishSixTitle);
 
-		// 	console.log(response[i].id);
-		// 	console.log(response[i].image);
+		$("#foodImg7").append(dishImgSeven);
+		$("#recipeTitle7").append(dishSevenTitle);
 
-		// }
+		$("#foodImg8").append(dishImgEight);
+		$("#recipeTitle8").append(dishEightTitle);
 
-		// //will need to display of results to card, need to pull the image from the response, dynamically create element for image, set attribute and place the image to HTML
-		// var dishImg = response.[i].image
-
-		// //this API only provides dish name and ingredients necessary to make the dish, but no step by step instruction, creating a variable to store the dish name to call another API to pull the recipe and step by step instrcutions
-		// var dishName = response.[i].title
-
-		// //function for the new API pull, will need to build the new function outside of this current function
 		searchRecipe(dishId);
 	});
-});
+};
+
+//Previous API does not provide instructions or step by step guide to prepare the dish, API below provides URL for the source of the dish with the recipe instructions
 function searchRecipe(dishId){
 	
 	var settings = {
@@ -129,6 +137,11 @@ function searchRecipe(dishId){
 		console.log(response);
 	});
 };
+
+$("#foodSearch").on("click", function(event) {
+	event.preventDefault();
+	recipeHound();
+});
 
 // on click event to initiate cocktail search once ingredients are entered
 $("#drinkSearch").on("click", function(event){ 
