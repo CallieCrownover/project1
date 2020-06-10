@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!--font link-->
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+	
+	 <!-- Compiled and minified CSS -->
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+	<link rel="stylesheet" href="./assets/style.css" />
+	
+	<!--Import Google Icon Font-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!--Import materialize.css-->
+	<link type="text/css" rel="stylesheet" href="./assets/materialize.css"  media="screen,projection"/>
+
+
+    <title>Recipe Hound</title>
+<style>
+	.one{
+		visibility: hidden;
+	}
+</style>
+</head>
+<body>
+
+	<!--navbar code-->
+	<nav>
+		<div class="nav-wrapper">
+		  <a href="#" class="brand-logo center"> <strong>RECIPEHOUND</strong></a>
+		  <ul id="nav-mobile" class="left hide-on-med-and-down">
+			<li><a href="sass.html">Food</a></li>
+			<li><a href="badges.html">Drinks</a></li>
+		  </ul>
+		</div>
+	</nav>
+
+
+	  <!--jumbotron-->
+	<div id="index-banner">
+		<div class="section no-pad-bot">
+			  <div class = "container box">
+			<br>
+			<h1 class="header center text-lighten-2"> <strong> RECIPE HOUND </strong></h1>
+			<div class="row center">
+			  <h5 class="header light">Simply search for an ingredient to work with and we'll do the rest</h5>
+			</div>
+			<div class="row center">
+				<!-- section is focused on food searches by main ingredients -->
+			<div class="food">
+			<input type="text input" id="foodIng"> <button id="foodSearch" class="btn-medium "> SEARCH RECIPES </button>
+			<br>
+			<input type="text input" id="drinkIng"><button id="drinkSearch">SEARCH DRINKS</button>
+			<br> <br>
+		</div>
+			</div>	
+			</div>
+			<br><br>
+		</div>
+	</div>	
+
+
+<!--grid-->
+<!-- <div class = "container"> -->
+	<div class = "divider"></div>
+  <div class="row">
+
+<!--1-->
+<!--cards for the recipes to be put into from the API-->
+	<div id="recipe-one">
+	<div class="hide">
+	<div class="col s3 m3">
+	<div class="card medium card-image z-depth-4 hoverable" id = "foodImg1">
+		<img src="./images/pizza-photography.jpg">
+	  <div class="card-content recipeBlurb recipeCard">
+			  <!-- filler for the info that will be recieved from the API-->
+				  <h3 class=“title” id = “recipeTitle1”></h3>
+				  <!--title of recipe-->
+	  </div>
+	</div>
+	</div>
+  </div>
+
+
+<!--2-->
+	<div id ="recipe-two">
+	<div class="hide">
+	<div class="col s3 m3">
+	<div class="card medium card-image z-depth-4 hoverable" id = "foodImg2">
+		<img src="./images/chicken.jpg">
+	  <div class="card-content recipeBlurb recipeCard">
+			  <!-- filler for the info that will be recieved from the API-->
+				  <h3 class=“title” id = “recipeTitle2”></h3>
+				  <!--title of recipe-->
+	  </div>
+	</div>
+  </div>
+
+
+<!--3-->
+<div id="recipe-three">
+<div class="hide">
+<div class="col s3 m3">
+	<div class="card medium card-image z-depth-4 hoverable" id = "foodImg3">
+		<img src="./images/taconight.jpeg">
+	  <div class="card-content recipeBlurb recipeCard">
+			  <!-- filler for the info that will be recieved from the API-->
+				  <h3 class=“title” id = “recipeTitle3”></h3>
+				  <!--title of recipe-->
+	  </div>
+	</div>
+  </div>
+
+
+<!--4-->
+<div id="recipe-four">
+	<div class="hide">
+<div class="col s3 m3">
+	<div class="card medium card-image z-depth-4 hoverable" id = "foodImg4">
+		<img src="./images/steak.webp">
+	  <div class="card-content recipeBlurb recipeCard">
+			  <!-- filler for the info that will be recieved from the API-->
+				  <h3 class=“title” id = “recipeTitle4”></h3>
+				  <!--title of recipe-->
+	  </div>
+	</div>
+  </div>
+
+</div> 
+<!-- the div above this line closes out the row -->
+
+
+<div class="row">
+<!--5-->
+<div id="recipe-five">
+	<div class="hide">
+<div class="col s3 m3">
+	<div class="card medium card-image z-depth-4 hoverable" id = "foodImg5">
+		<img src="./images/food 5.jpg">
+	  <div class="card-content recipeBlurb recipeCard">
+			  <!-- filler for the info that will be recieved from the API-->
+				  <h3 class=“title” id = “recipeTitle5”></h3>
+				  <!--title of recipe-->
+	  </div>
+	</div>
+  </div>
+
+
+<!--6-->
+<div id="recipe-six">
+	<div class="hide">
+<div class="col s3 m3">
+	<div class="card medium card-image z-depth-4 hoverable" id = "foodImg6">
+		<img src="./images/food6.jpg">
+	  <div class="card-content recipeBlurb recipeCard">
+			  <!-- filler for the info that will be recieved from the API-->
+				  <h3 class=“title” id = “recipeTitle6”></h3>
+				  <!--title of recipe-->
+	  </div>
+	</div>
+  </div>
+
+
+<!--7-->
+<div id="recipe-seven">
+	<div class="hide">
+<div class="col s3 m3">
+	<div class="card medium card-image z-depth-4 hoverable" id = "foodImg7">
+		<img src="./images/food7.jpg">
+	  <div class="card-content recipeBlurb recipeCard">
+			  <!-- filler for the info that will be recieved from the API-->
+				  <h3 class=“title” id = “recipeTitle7”></h3>
+				  <!--title of recipe-->
+	  </div>
+	</div>
+  </div>
+
+
+<!--8-->
+<div id="recipe-eight">
+	<div class="hide">
+<div class="col s3 m3">
+	<div class="card medium card-image z-depth-4 hoverable" id = "foodImg8">
+		<img src="./images/food8.webp">
+	  <div class="card-content recipeBlurb recipeCard">
+			  <!-- filler for the info that will be recieved from the API-->
+				  <h3 class=“title” id = “recipeTitle8”></h3>
+				  <!--title of recipe-->
+	  </div>
+	</div>
+  </div>
+
+</div>
+
+<div class="row">
+<!--9-->
+<div id="recipe-nine">
+	<div class="hide">
+<div class="col s3 m3">
+	<div class="card medium card-image z-depth-4 hoverable" id = "drinkImg1">
+		<img src="./images/drink1.jpg">
+	  <div class="card-content recipeBlurb recipeCard">
+			  <!-- filler for the info that will be recieved from the API-->
+				  <h3 class=“title” id = “cocktail1”></h3>
+				  <!--title of recipe-->
+	  </div>
+	</div>
+  </div>
+
+
+<!--10-->
+<div id="recipe-ten">
+	<div class="hide">
+<div class="col s3 m3">
+	<div class="card medium card-image z-depth-4 hoverable" id = "drinkImg2">
+		<img src="./images/drink6.jpg">
+	  <div class="card-content recipeBlurb recipeCard">
+			  <!-- filler for the info that will be recieved from the API-->
+				  <h3 class=“title” id = “cocktail2”></h3>
+				  <!--title of recipe-->
+	  </div>
+	</div>
+  </div>
+
+
+<!--11-->
+<div id="recipe-eleven">
+	<div class="hide">
+    <div class="col s3 m3">
+      <div class="card medium card-image z-depth-4 hoverable" id = "drinkImg3">
+          <img src="./images/drink3.jpg">
+        <div class="card-content recipeBlurb recipeCard">
+				<!-- filler for the info that will be recieved from the API-->
+					<h3 class=“title” id = “cocktail3”></h3>
+					<!--title of recipe-->
+        </div>
+      </div>
+	</div>
+	
+	
+<!--12-->
+<div id="recipe-twelve">
+	<div class="hide">
+<div class="col s3 m3">
+	<div class="card medium card-image z-depth-4 hoverable" id = "drinkImg4">
+		<img src="./images/drink5.jpeg">
+	  <div class="card-content recipeBlurb recipeCard">
+			  <!-- filler for the info that will be recieved from the API-->
+				  <h3 class=“title” id = “cocktail4”></h3>
+				  <!--title of recipe-->
+	  </div>
+	</div>
+  </div>
+	
+</div>
+</p>
+
+	
+<!-- </div> -->
+<div class = "container">
+	<div class="footer-copyright">
+
+	  © 2020 Copyright Text
+	  <a class="text-lighten-4 right" href="#!">More Links</a>
+	</div>
+</div>
+  </footer>
+
+
+
+
+	 <!-- Compiled and minified JavaScript -->
+ 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+			 
+
+	<!-- JQuery script library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<!-- Group script file -->
+	<script src="./assets/script.js"></script>
+</body>
+</html>
+	<!-- end code -->
