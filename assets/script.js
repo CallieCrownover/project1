@@ -3,7 +3,6 @@
 
 // on click event to initiate food recipe search once ingredients are entered
 function recipeHound() {
-
 	// variable to pull ingredients to be used for search
 	var foodIng = $("#foodIng")
 		.val()
@@ -22,7 +21,7 @@ function recipeHound() {
 			"x-rapidapi-key": "380aee2f63msh502b64f71be7614p164be7jsn561a2dd539f1"
 		}
 	}
-
+let arr=[]
 	$.ajax(settings).done(function (response) {
 		console.log(response);
 
@@ -35,34 +34,41 @@ function recipeHound() {
 		var dishOneImg = response[0].image;
 		var dishOneTitle = response[0].title;
 		var dishId = response[0].id;
+		arr.push(dishId)
 		
 		var dishTwoImg = response[1].image;
 		var dishTwoTitle = response[1].title;
 		var dishTwoId = response[1].id;
-
+		arr.push(dishTwoId)
 		var dishThreeImg = response[2].image;
 		var dishThreeTitle = response[2].title;
 		var dishThreeId = response[2].id;
+		arr.push(dishThreeId)
 
 		var dishFourImg = response[3].image;
 		var dishFourTitle = response[3].title;
 		var dishFourId = response[3].id;
+		arr.push(dishFourId)
 
 		var dishFiveImg = response[4].image;
 		var dishFiveTitle = response[4].title;
 		var dishFiveId = response[4].id;
+		arr.push(dishFiveId)
 
 		var dishSixImg = response[5].image;
 		var dishSixTitle = response[5].title;
 		var dishSixId = response[5].id;
+		arr.push(dishSixId)
 
 		var dishSevenImg = response[6].image;
 		var dishSevenTitle = response[6].title;
 		var dishSevenId = response[6].id;
+		arr.push(dishSevenId)
 
 		var dishEightImg = response[7].image;
 		var dishEightTitle = response[7].title;
 		var dishEightId = response[7].id;
+		arr.push(dishEightId)
 
 		//create element and adds attribute
 		var dishImg = $("<img>");
@@ -76,7 +82,7 @@ function recipeHound() {
 
 		var dishImgFour = $("<img>");
 		dishImgFour.attr("src", dishFourImg);
-
+		
 		var dishImgFive = $("<img>");
 		dishImgFive.attr("src", dishFiveImg);
 
@@ -91,32 +97,54 @@ function recipeHound() {
 
 
 		//placing information to the HTML page
-		$("#foodImg1").append(dishImg);
-		$("#recipeTitle1").append(dishOneTitle);
+		$("#foodImg1").prepend(dishImg);
+		$("#recipeT1").text(dishOneTitle);
+		console.log(dishOneTitle);
+		
+		$("#foodImg2").prepend(dishImgTwo);
+		$("#recipeT2").text(dishTwoTitle);
+		console.log(dishTwoTitle);
 
-		$("#foodImg2").append(dishImgTwo);
-		$("#recipeTitle2").append(dishTwoTitle);
+		$("#foodImg3").prepend(dishImgThree);
+		$("#recipeT3").text(dishThreeTitle);
+		console.log(dishThreeTitle);
 
-		$("#foodImg3").append(dishImgThree);
-		$("#recipeTitle3").append(dishThreeTitle);
+		$("#foodImg4").prepend(dishImgFour);
+		$("#recipeT4").text(dishFourTitle);
 
-		$("#foodImg4").append(dishImgFour);
-		$("#recipeTitle4").append(dishFourTitle);
+		$("#foodImg5").prepend(dishImgFive);
+		$("#recipeT5").append(dishFiveTitle);
 
-		$("#foodImg5").append(dishImgFive);
-		$("#recipeTitle5").append(dishFiveTitle);
+		$("#foodImg6").prepend(dishImgSix);
+		$("#recipeT6").append(dishSixTitle);
 
-		$("#foodImg6").append(dishImgSix);
-		$("#recipeTitle6").append(dishSixTitle);
+		$("#foodImg7").prepend(dishImgSeven);
+		$("#recipeT7").append(dishSevenTitle);
 
-		$("#foodImg7").append(dishImgSeven);
-		$("#recipeTitle7").append(dishSevenTitle);
+		$("#foodImg8").prepend(dishImgEight);
+		$("#recipeT8").append(dishEightTitle);
 
-		$("#foodImg8").append(dishImgEight);
-		$("#recipeTitle8").append(dishEightTitle);
+		let count =1
+	for(let i =0;i<arr.length;i++){
+		searchRecipe(arr[i]).then(function(item){
+			console.log("___") 
+			console.log(item)
+			let url = item.sourceUrl
+			console.log(url)
+			console.log("url above")
+			let aTag=$("<a>").attr("href",url)
+			aTag.text("recipe link")
+			$("<div>")
+			$(`#recipeT${count}`).append(aTag)
+count++
 
-		searchRecipe(dishId);
-	});
+		})
+		console.log("***")
+		
+	}
+		
+		
+});
 };
 
 //Previous API does not provide instructions or step by step guide to prepare the dish, API below provides URL for the source of the dish with the recipe instructions
@@ -133,9 +161,7 @@ function searchRecipe(dishId){
 		}
 	}
 	
-	$.ajax(settings).done(function (response) {
-		console.log(response);
-	});
+	return $.ajax(settings)
 };
 
 $("#foodSearch").on("click", function(event) {
