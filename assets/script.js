@@ -133,7 +133,7 @@ let arr=[]
 			console.log(url)
 			console.log("url above")
 			let aTag=$("<a>").attr("href",url)
-			aTag.text("recipe link")
+			aTag.text(" recipe link")
 			$("<div>")
 			$(`#recipeT${count}`).append(aTag)
 count++
@@ -188,39 +188,34 @@ $("#drinkSearch").on("click", function(event){
 			"x-rapidapi-key": "05b725c27amsh218a9c552817d66p1c19b1jsnd9b6fdf58751"
 		}
 	}
-	
+	let arrTwo=[]
 	$.ajax(cocktail).done(function (response) {
 		console.log(response);
 		console.log("****")
 
-// for (var i=0;i<3;i++){
-	// 	var img =$("#imge"+i+"")
-	// 	img.attr("src", response.[i].image)
-	// }
+	//will need to display of results to card, need to pull the image from the response, dynamically create element for image, set attribute and place the image to HTML
+         
+        var drinkOneImg = response.drinks[0].strDrinkThumb;
+		var drinkOneTitle = response.drinks[0].strDrink;
+		var drinkId = response.drinks[0].idDrink;
+		arrTwo.push(drinkId);
+		console.log(drinkOneTitle);
 
+		var drinkTwoImg = response.drinks[1].strDrinkThumb;
+		var drinkTwoTitle = response.drinks[1].strDrink;
+		var drinkTwoId = response.drinks[1].idDrink;
+		arrTwo.push(drinkTwoId);
+		console.log(drinkTwoTitle);
 
-//will need to display of results to card, need to pull the image from the response, dynamically create element for image, set attribute and place the image to HTML
- 
-        
-        var drinkOneImg = response[0].image;
-		var drinkOneTitle = response[0].title;
-		var drinkId = response[0].id;
-		arr.push(drinkId)
+		var drinkThreeImg = response.drinks[2].strDrinkThumb;
+		var drinkThreeTitle = response.drinks[2].strDrink;
+		var drinkThreeId = response.drinks[2].idDrink;
+		arrTwo.push(drinkThreeId);
 
-		var drinkTwoImg = response[1].image;
-		var drinkTwoTitle = response[1].title;
-		var drinkTwoId = response[1].id;
-		arr.push(drinkTwoId)
-
-		var drinkThreeImg = response[2].image;
-		var drinkThreeTitle = response[2].title;
-		var drinkThreeId = response[2].id;
-		arr.push(drinkThreeId)
-
-		var drinkFourImg = response[3].image;
-		var drinkFourTitle = response[3].title;
-		var drinkFourId = response[3].id;
-		arr.push(drinkFourId)
+		var drinkFourImg = response.drinks[3].strDrinkThumb;
+		var drinkFourTitle = response.drinks[3].strDrink;
+		var drinkFourId = response.drinks[3].idDrink;
+		arrTwo.push(drinkFourId);
         
         var drinkImg = $("<img>");
 		drinkImg.attr("src", drinkOneImg);
@@ -249,16 +244,30 @@ $("#drinkSearch").on("click", function(event){
 		console.log(drinkThreeTitle);
 
 		$("#drinkImg4").prepend(drinkImgFour);
-        $("#cocktail4").text(drinkFourTitle);
+		$("#cocktail4").text(drinkFourTitle);
+		
+
+	// 	for(let i =0;i<arr.length;i++){
+	// 		searchRecipe(arr[i]).then(function(item){
+	// 			console.log("___") 
+	// 			console.log(item)
+	// 			let url = item.sourceUrl
+	// 			console.log(url)
+	// 			console.log("url above")
+	// 			let aTag=$("<a>").attr("href",url)
+	// 			aTag.text(" recipe link")
+	// 			$("<div>")
+	// 			$(`#recipeT${count}`).append(aTag)
+	// count++
 
 
+	});
+});
     //function for the new API pull, will need to build the new function outside of this current function
-
     // need to pull drink details by ID from previous API
-    
     // "strInstructions" cocktail instructions location
     
-    function searchCocktail(drinkID);
+function searchCocktail(drinkID) {
 
 	var cocktailRcp = {
 		"async": true,
@@ -272,7 +281,8 @@ $("#drinkSearch").on("click", function(event){
 	}
 	
 	$.ajax(cocktailRcp).done(function (response) {
-        console.log(response);
-    })
-})
-});
+		console.log(response);
+		console.log("***");
+
+	});
+}
