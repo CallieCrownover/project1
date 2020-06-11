@@ -232,19 +232,25 @@ $("#drinkSearch").on("click", function(event){
 
 		//placing information to the HTML page
 		$("#drinkImg1").prepend(drinkImg);
-		$("#cocktail1").text(drinkOneTitle);
+		$("#cocktail1").append(drinkOneTitle);
+		$("#instructions").append(drinkOneTitle)
+
 		console.log(drinkOneTitle);
 		
 		$("#drinkImg2").prepend(drinkImgTwo);
 		$("#cocktail2").text(drinkTwoTitle);
+		$("#instructions").append(drinkTwoTitle)
 		console.log(drinkTwoTitle);
 
 		$("#drinkImg3").prepend(drinkImgThree);
 		$("#cocktail3").text(drinkThreeTitle);
+		$("#instructions").append(drinkThreeTitle)
+
 		console.log(drinkThreeTitle);
 
 		$("#drinkImg4").prepend(drinkImgFour);
 		$("#cocktail4").text(drinkFourTitle);
+		$("#instructions").append(drinkGourTitle)
 		
 
 	// 	for(let i =0;i<arr.length;i++){
@@ -283,6 +289,10 @@ function searchCocktail(drinkID) {
 	$.ajax(cocktailRcp).done(function (response) {
 		console.log(response);
 		console.log("***");
+
+		var directions = strInstructions
+
+// $("#recipeShow").on("click",
 
 	});
 }
