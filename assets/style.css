@@ -24,25 +24,61 @@ body {
 }
 
 
-#index-banner {
+#index-banner-food {
     background-image: url('../images/food\ header\ 1.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
 }
 
+#index-banner-drink {
+    margin-top: 90px;
+    background-image: url('../images/bar-bottles-web.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
 
 .row {
+    align-items: center;
+    justify-content: center;
+    margin-right: 50px;
+    margin-left: 50px;
     margin: 30px;
     padding-left: 30px;
     padding-right: 30px;
 }
 
 
+
+.col, .s3, .m3 {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    max-height: 400px;
+}
+
 .text-lighten-2 {
     font-size: 120px;
 }
 
+.box {
+    width: 60px;
+    align-self: center;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+
+
+.boxDrinks {
+    text-align: center;
+    max-height: 390px;
+    width: 60px;
+    align-self: center;
+    background: rgba(0, 0, 0, 0.6);
+}
 
 .light {
     color: white;
@@ -54,27 +90,27 @@ h1 {
     text-shadow: 2px 2px 4px #000000;
 }
 
-
-.box {
-    width: 60px;
-    align-self: center;
-    background: rgba(0, 0, 0, 0.5);
+.header,  {
+    text-align: center;
 }
 
 
-.card, .recipeCard, .recipeBlurb, .card-content {
+
+
+.card, .recipeCard, .medium {
+    justify-content: center;
+    align-items: center;
     width: 100%;
     background: #D3CCE3; 
-    background: -webkit-linear-gradient(to top, #E9E4F0, #D3CCE3);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to top, #E9E4F0, #D3CCE3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: rgb(236,224,252);
+    background: linear-gradient(0deg, rgba(236,224,252,0.9724264705882353) 17%, rgba(252,232,252,1) 66%);
     object-fit: cover;
     display: block;
-    width:200px;
+    width:300px;
+    position: relative;
+
 }
 
-.grid-element {
-    display: block;
-}
 
 img {
     width: 100%;

@@ -36,20 +36,18 @@
 
 
 	  <!--jumbotron-->
-	<div id="index-banner">
+	<div id="index-banner-food">
 		<div class="section no-pad-bot">
 			  <div class = "container box">
 			<br>
 			<h1 class="header center text-lighten-2"> <strong> RECIPE HOUND </strong></h1>
 			<div class="row center">
-			  <h5 class="header light">Simply search for an ingredient to work with and we'll do the rest</h5>
-			</div>
-			<div class="row center">
-				<!-- section is focused on food searches by main ingredients -->
+				<h5 class="header light">Simply search for an ingredient to work with and we'll do the rest</h5>
+				<br>
+				<br>
 			<div class="food">
 			<input type="text input" id="foodIng"> <button id="foodSearch" class="btn-medium "> SEARCH RECIPES </button>
 			<br>
-			<input type="text input" id="drinkIng"><button id="drinkSearch">SEARCH DRINKS</button>
 			<br> <br>
 		</div>
 			</div>	
@@ -69,7 +67,7 @@
 <div class="col s3 m3">
 	<div class="card medium card-image z-depth-4 hoverable">
 		<div id="foodImg1">
-	  <div class="card-content recipeBlurb recipeCard">
+	  <div class="recipeCard">
 			  <!-- filler for the info that will be recieved from the API-->
 				  <p class="title" id="recipeT1"></p>
 				  <!--title of recipe-->
@@ -83,7 +81,7 @@
 <div class="col s3 m3">
 	<div class="card medium card-image z-depth-4 hoverable" >
 		<div id="foodImg2">
-	  <div class="card-content recipeBlurb recipeCard">
+	  <div class="recipeCard">
 			  <!-- filler for the info that will be recieved from the API-->
 				  <p class="title" id="recipeT2"></p>
 				  <!--title of recipe-->
@@ -96,7 +94,7 @@
 <div class="col s3 m3">
 	<div class="card medium card-image z-depth-4 hoverable" id = "foodImg3">
 		
-	  <div class="card-content recipeBlurb recipeCard">
+	  <div class="recipeCard">
 			  <!-- filler for the info that will be recieved from the API-->
 				  <p class="title" id="recipeT3"></p>
 				  <!--title of recipe-->
@@ -110,14 +108,13 @@
 <div class="col s3 m3">
 	<div class="card medium card-image z-depth-4 hoverable" id = "foodImg4">
 		
-	  <div class="card-content recipeBlurb recipeCard">
+	  <div class="recipeCard">
 			  <!-- filler for the info that will be recieved from the API-->
 				  <p class="title" id="recipeT4"></p>
 				  <!--title of recipe-->
 	  </div>
 	</div>
   </div>
-</div>
 </div> 
 </div>
 <!-- the div above this line closes out the row -->
@@ -127,7 +124,7 @@
 	<div class="col s3 m3">
 		<div class="card medium card-image z-depth-4 hoverable" >
 			<div id = "foodImg5">
-		  <div class="card-content recipeBlurb recipeCard">
+		  <div class="recipeCard">
 				  <!-- filler for the info that will be recieved from the API-->
 					  <p class="title" id="recipeT5"></p>
 					  <!--title of recipe-->
@@ -141,7 +138,7 @@
 	<div class="col s3 m3">
 		<div class="card medium card-image z-depth-4 hoverable">
 			<div id = "foodImg6">
-		  <div class="card-content recipeBlurb recipeCard">
+		  <div class="recipeCard">
 				  <!-- filler for the info that will be recieved from the API-->
 					  <p class="title" id ="recipeT6"></p>
 					  <!--title of recipe-->
@@ -154,7 +151,7 @@
 	<div class="col s3 m3">
 		<div class="card medium card-image z-depth-4 hoverable" >
 			<div id = "foodImg7" >
-		  <div class="card-content recipeBlurb recipeCard">
+		  <div class="recipeCard">
 				  <!-- filler for the info that will be recieved from the API-->
 					  <p class="title" id ="recipeT7"></p>
 					  <!--title of recipe-->
@@ -167,7 +164,7 @@
 	<div class="col s3 m3">
 		<div class="card medium card-image z-depth-4 hoverable" >
 			<div  id = "foodImg8">
-		  <div class="card-content recipeBlurb recipeCard">
+		  <div class="recipeCard">
 				  <!-- filler for the info that will be recieved from the API-->
 					  <p class="title" id = "recipeT8"></p>
 					  <!--title of recipe-->
@@ -177,14 +174,33 @@
 	</div>
 	</div>
 
-
+<div class="row">
+		  <!--jumbotron-->
+		  <div id="index-banner-drink">
+			<div class="section no-pad-bot">
+				  <div class = "container boxDrinks">
+				<br>
+				<h1 class="header center text-lighten-2"> <strong> DRINK HOUND </strong></h1>
+				  <h5 class="header light">Simply search for a refreshing cocktail to go with your meal</h5>
+					<!-- section is focused on food searches by main ingredients -->
+				<div class="food">
+				<br>
+				<input type="text input" id="drinkIng"><button id="drinkSearch">SEARCH DRINKS</button>
+				<br> <br>
+				<br>
+				</div>	
+				</div>
+				<br><br>
+			</div>
+		</div>	
+	</div>
 
 <div class="row">
 <!--9-->
 <div class="col s3 m3">
 	<div class="card medium card-image z-depth-4 hoverable" id = "drinkImg1">
 		<img src="./images/drink1.jpg">
-	  <div class="card-content recipeBlurb recipeCard">
+	  <div class="recipeCard">
 			  <!-- filler for the info that will be recieved from the API-->
 				  <p class=“title” id = “cocktail1”></p>
 				  <!--title of recipe-->
@@ -197,7 +213,7 @@
 <div class="col s3 m3">
 	<div class="card medium card-image z-depth-4 hoverable" id = "drinkImg2">
 		<img src="./images/drink6.jpg">
-	  <div class="card-content recipeBlurb recipeCard">
+	  <div class="recipeCard">
 			  <!-- filler for the info that will be recieved from the API-->
 				  <p class=“title” id = “cocktail2”></p>
 				  <!--title of recipe-->
@@ -210,7 +226,7 @@
     <div class="col s3 m3">
       <div class="card medium card-image z-depth-4 hoverable" id = "drinkImg3">
           <img src="./images/drink3.jpg">
-        <div class="card-content recipeBlurb recipeCard">
+        <div class="recipeCard">
 				<!-- filler for the info that will be recieved from the API-->
 					<p class=“title” id = “cocktail3”></p>
 					<!--title of recipe-->
@@ -223,7 +239,7 @@
 <div class="col s3 m3">
 	<div class="card medium card-image z-depth-4 hoverable" id = "drinkImg4">
 		<img src="./images/drink5.jpeg">
-	  <div class="card-content recipeBlurb recipeCard">
+	  <div class="recipeCard">
 			  <!-- filler for the info that will be recieved from the API-->
 				  <p class=“title” id = “cocktail4”></p>
 				  <!--title of recipe-->
@@ -232,14 +248,15 @@
   </div>
 </div>
 </div>
-</div>
 	
+<br>
+<br>
+
 <!-- </div> -->
 <div class = "container">
 	<div class="footer-copyright">
 
 	  © 2020 Copyright Text
-	  <a class="text-lighten-4 right" href="#!">More Links</a>
 	</div>
 </div>
   </footer>
