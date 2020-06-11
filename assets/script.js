@@ -193,21 +193,86 @@ $("#drinkSearch").on("click", function(event){
 		console.log(response);
 		console.log("****")
 
-	// 	var cocktailOne = response.drinks.0.idDrink
-	// });
-	});
-
-	// var coctailRecipe = {
-	// 	"async": true,
-	// 	"crossDomain": true,
-	// 	"url": "https://the-cocktail-db.p.rapidapi.com/lookup.php?i=3",
-	// 	"method": "GET",
-	// 	"headers": {
-	// 		"x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",
-	// 		"x-rapidapi-key": "380aee2f63msh502b64f71be7614p164be7jsn561a2dd539f1"
-	// 	}
+// for (var i=0;i<3;i++){
+	// 	var img =$("#imge"+i+"")
+	// 	img.attr("src", response.[i].image)
 	// }
+
+
+//will need to display of results to card, need to pull the image from the response, dynamically create element for image, set attribute and place the image to HTML
+ 
+        
+        var drinkOneImg = response[0].image;
+		var drinkOneTitle = response[0].title;
+		var drinkId = response[0].id;
+		arr.push(drinkId)
+
+		var drinkTwoImg = response[1].image;
+		var drinkTwoTitle = response[1].title;
+		var drinkTwoId = response[1].id;
+		arr.push(drinkTwoId)
+
+		var drinkThreeImg = response[2].image;
+		var drinkThreeTitle = response[2].title;
+		var drinkThreeId = response[2].id;
+		arr.push(drinkThreeId)
+
+		var drinkFourImg = response[3].image;
+		var drinkFourTitle = response[3].title;
+		var drinkFourId = response[3].id;
+		arr.push(drinkFourId)
+        
+        var drinkImg = $("<img>");
+		drinkImg.attr("src", drinkOneImg);
+
+		var drinkImgTwo = $("<img>");
+		drinkImgTwo.attr("src", drinkTwoImg);
+
+		var drinkImgThree = $("<img>");
+		drinkImgThree.attr("src", drinkThreeImg);
+
+		var drinkImgFour = $("<img>");
+        drinkImgFour.attr("src", drinkFourImg);
+    
+
+		//placing information to the HTML page
+		$("#drinkImg1").prepend(drinkImg);
+		$("#cocktail1").text(drinkOneTitle);
+		console.log(drinkOneTitle);
+		
+		$("#drinkImg2").prepend(drinkImgTwo);
+		$("#cocktail2").text(drinkTwoTitle);
+		console.log(drinkTwoTitle);
+
+		$("#drinkImg3").prepend(drinkImgThree);
+		$("#cocktail3").text(drinkThreeTitle);
+		console.log(drinkThreeTitle);
+
+		$("#drinkImg4").prepend(drinkImgFour);
+        $("#cocktail4").text(drinkFourTitle);
+
+
+    //function for the new API pull, will need to build the new function outside of this current function
+
+    // need to pull drink details by ID from previous API
+    
+    // "strInstructions" cocktail instructions location
+    
+    function searchCocktail(drinkID);
+
+	var cocktailRcp = {
+		"async": true,
+		"crossDomain": true,
+		"url": "https://the-cocktail-db.p.rapidapi.com/lookup.php?i=" + drinkID,
+		"method": "GET",
+		"headers": {
+			"x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",
+			"x-rapidapi-key": "05b725c27amsh218a9c552817d66p1c19b1jsnd9b6fdf58751"
+		}
+	}
 	
-	// $.ajax(cocktailR).done(function(response) {
-	// 	console.log(response);
-	});
+	$.ajax(cocktailRcp).done(function (response) {
+        console.log(response);
+    })
+})
+});
