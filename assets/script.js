@@ -1,6 +1,3 @@
-// //stores previous recipes in local storage
-// var recipeArray = JSON.parse(localStorage.getItem("recipes")) || [];
-
 // on click event to initiate food recipe search once ingredients are entered
 function recipeHound() {
 
