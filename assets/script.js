@@ -3,6 +3,7 @@
 
 // on click event to initiate food recipe search once ingredients are entered
 function recipeHound() {
+
 	// variable to pull ingredients to be used for search
 	var foodIng = $("#foodIng")
 		.val()
@@ -40,6 +41,7 @@ let arr=[]
 		var dishTwoTitle = response[1].title;
 		var dishTwoId = response[1].id;
 		arr.push(dishTwoId)
+
 		var dishThreeImg = response[2].image;
 		var dishThreeTitle = response[2].title;
 		var dishThreeId = response[2].id;
@@ -73,7 +75,7 @@ let arr=[]
 		//create element and adds attribute
 		var dishImg = $("<img>");
 		dishImg.attr("src", dishOneImg);
-
+				
 		var dishImgTwo = $("<img>");
 		dishImgTwo.attr("src", dishTwoImg);
 
@@ -113,16 +115,16 @@ let arr=[]
 		$("#recipeT4").text(dishFourTitle);
 
 		$("#foodImg5").prepend(dishImgFive);
-		$("#recipeT5").append(dishFiveTitle);
+		$("#recipeT5").text(dishFiveTitle);
 
 		$("#foodImg6").prepend(dishImgSix);
-		$("#recipeT6").append(dishSixTitle);
+		$("#recipeT6").text(dishSixTitle);
 
 		$("#foodImg7").prepend(dishImgSeven);
-		$("#recipeT7").append(dishSevenTitle);
+		$("#recipeT7").text(dishSevenTitle);
 
 		$("#foodImg8").prepend(dishImgEight);
-		$("#recipeT8").append(dishEightTitle);
+		$("#recipeT8").text(dishEightTitle);
 
 		let count =1
 	for(let i =0;i<arr.length;i++){
@@ -132,7 +134,8 @@ let arr=[]
 			let url = item.sourceUrl
 			console.log(url)
 			console.log("url above")
-			let aTag=$("<a>").attr("href",url)
+			let aTag=$("<a>").attr("href",url) 
+			$("<a>").attr("target","_blank")
 			aTag.text(" recipe link")
 			$("<div>")
 			$(`#recipeT${count}`).append(aTag)
@@ -167,11 +170,22 @@ function searchRecipe(dishId){
 $("#foodSearch").on("click", function(event) {
 	event.preventDefault();
 	recipeHound();
+
+	$("#foodImg1").empty();
+	$("#foodImg2").empty();
+	$("#foodImg3").empty();
+	$("#foodImg4").empty();
+	$("#foodImg5").empty();
+	$("#foodImg6").empty();
+	$("#foodImg7").empty();
+	$("#foodImg8").empty();
+
 });
 
 // on click event to initiate cocktail search once ingredients are entered
 $("#drinkSearch").on("click", function(event){ 
 
+	
 	var drinkIng= $("#drinkIng")
 		.val()
 		.trim();
