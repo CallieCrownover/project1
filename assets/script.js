@@ -1,6 +1,3 @@
-// //stores previous recipes in local storage
-// var recipeArray = JSON.parse(localStorage.getItem("recipes")) || [];
-
 // on click event to initiate food recipe search once ingredients are entered
 function recipeHound() {
 
@@ -134,8 +131,10 @@ let arr=[]
 			let url = item.sourceUrl
 			console.log(url)
 			console.log("url above")
-			let aTag=$("<a>").attr("href",url) 
-			$("<a>").attr("target","_blank")
+			let aTag=$("<a>").attr({
+				href: url,
+				target: "_blank"
+			}) 
 			aTag.text(" recipe link")
 			$("<div>")
 			$(`#recipeT${count}`).append(aTag)
