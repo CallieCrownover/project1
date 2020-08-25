@@ -40,6 +40,7 @@ let arr=[]
 		var dishTwoTitle = response[1].title;
 		var dishTwoId = response[1].id;
 		arr.push(dishTwoId)
+
 		var dishThreeImg = response[2].image;
 		var dishThreeTitle = response[2].title;
 		var dishThreeId = response[2].id;
@@ -167,6 +168,7 @@ function searchRecipe(dishId){
 $("#foodSearch").on("click", function(event) {
 	event.preventDefault();
 	recipeHound();
+	$("div").removeClass("hide");
 });
 
 // on click event to initiate cocktail search once ingredients are entered
